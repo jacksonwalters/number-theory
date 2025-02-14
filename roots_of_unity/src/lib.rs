@@ -144,6 +144,6 @@ pub fn crt(a1: i64, n1: i64, a2: i64, n2: i64) -> i64 {
     let n = n1 * n2;
     let m1 = mod_inv(n1, n2); // Inverse of n1 mod n2
     let m2 = mod_inv(n2, n1); // Inverse of n2 mod n1
-    let x = (a1 * m2 * n2 + a2 * m1 * n1) % n;
+    let x = mod_add(a1 * m2 * n2, a2 * m1 * n1, n);
     if x < 0 { x + n } else { x }
 }
